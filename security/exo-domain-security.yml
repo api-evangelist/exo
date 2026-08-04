@@ -1,0 +1,54 @@
+generated: '2026-08-04'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml hosts + observed Exo product hosts
+hosts:
+- host: www.exo.inc
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 25 20:46:56 2026 GMT
+  hsts: null
+- host: support.exo.inc
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 25 23:43:17 2026 GMT
+  hsts: true
+  hsts_max_age: 259200
+  hsts_include_subdomains: true
+  note: Zendesk-hosted help center
+- host: store.exo.inc
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  2 22:48:32 2026 GMT
+  hsts: true
+  hsts_max_age: 7889238
+  note: Shopify-hosted store
+- host: cloud.exoworks.inc
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 13 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_include_subdomains: true
+  hsts_preload: true
+  note: Exo Works web application (single-page app shell)
+- host: api.prod.exoworks.inc
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 16 23:59:59 2026 GMT
+  hsts: null
+  note: 'Exo Works production API host (AWS API Gateway behind CloudFront). Anonymous
+    GET / returns HTTP 403 {"message":"Forbidden"} with x-amzn-errortype ForbiddenException.
+    Private product backend - no public documentation, no public specification.'
+domains:
+- domain: exo.inc
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: exoworks.inc
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+  dmarc_policy: null

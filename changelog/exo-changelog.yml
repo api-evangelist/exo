@@ -1,0 +1,41 @@
+generated: '2026-08-04'
+method: searched
+source: https://support.exo.inc/hc/en-us/categories/47601779738523-Release-Notes
+url: https://support.exo.inc/hc/en-us/sections/47602019816987-Exo-Works-Release-Notes
+product: Exo Works
+scheme: semver
+current_version: 3.0.2
+cadence: irregular; three releases published between November 2025 and March 2026
+entries:
+- version: 3.0.2
+  date: '2026-03'
+  published: '2026-03-26'
+  title: March 2026 - 3.0.2
+  url: https://support.exo.inc/hc/en-us/articles/48309991305499-March-2026-3-0-2
+  breaking: null
+  highlights: []
+- version: 3.0.1
+  date: '2026-02'
+  published: '2026-03-09'
+  title: February 2026 - 3.0.1
+  url: https://support.exo.inc/hc/en-us/articles/47603410652571-February-2026-3-0-1
+  breaking: null
+  highlights: []
+- version: '3.0'
+  date: '2025-11'
+  published: '2026-03-09'
+  title: November 2025 - 3.0
+  url: https://support.exo.inc/hc/en-us/articles/47602120195227-November-2025-3-0
+  breaking: null
+  highlights: []
+notes: 'Release notes are published as help-center articles whose bodies carry no machine-readable
+  text - the Zendesk article bodies fetched via /api/v2/help_center are empty or a
+  single underscore, with the release content delivered as an embedded/attached document.
+  Version numbers, titles and dates are therefore captured, but per-release highlights
+  and breaking-change flags could not be harvested without the attachment. No API changelog
+  exists because Exo publishes no public API.'
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://support.exo.inc/api/v2/help_center/en-us/sections/47602019816987/articles.json
+  http_status: 200
+  article_count: 3

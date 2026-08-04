@@ -1,0 +1,86 @@
+generated: '2026-08-04'
+method: searched
+source: https://store.exo.inc/
+docs:
+- https://www.exo.inc/exo-works#pricing
+- https://store.exo.inc/
+currency: USD
+note: 'Software tiers (Exo Works Connect, Exo Works Enterprise) are quote-based on
+  exo.inc; the Exo online store publishes list prices for hardware and the self-serve
+  subscription SKUs. Prices captured verbatim from the public storefront product feed
+  on the generated date; Exo states "Prices and availability subject to change without
+  notice."'
+plans:
+- name: Exo Works Connect
+  type: software-tier
+  price: null
+  pricing_model: quote
+  url: https://www.exo.inc/exo-works#pricing
+  description: Centralize POCUS imaging for reporting, collaborating, managing QA and
+    tracking proficiency for credentialing.
+  features:
+  - Documenting and reporting
+  - DICOM, PACS, VNA and Worklist integration
+  - Secure archiving and sharing
+  - Collaboration and QA workflow
+  - Proficiency tracking and insights
+  - Multi-specialty support
+  - Fleet management
+  - SSO with SAML
+  - Unlimited storage on multi-tenant cloud
+  excludes:
+  - Order- and encounter-based workflow
+  - Billing workflow
+  - EHR integration (HL7/ADT/FHIR)
+- name: Exo Works Enterprise
+  type: software-tier
+  price: null
+  pricing_model: quote
+  url: https://www.exo.inc/exo-works#pricing
+  description: Advanced control and flexibility across a health system, from documentation
+    to billing. Exo Works Connect plus order- and encounter-based workflow, billing
+    workflow, EHR integration (HL7/ADT/FHIR), fleet management and Active Directory
+    (LDAP).
+- name: Connect 1 Year
+  type: subscription
+  price: 500.0
+  period: year
+  url: https://store.exo.inc/products/connect-1-year
+- name: Connect 2 Years
+  type: subscription
+  price: 1000.0
+  period: 2 years
+  url: https://store.exo.inc/products/connect-2-years
+- name: Connect 3 Years
+  type: subscription
+  price: 1500.0
+  period: 3 years
+  url: https://store.exo.inc/products/connect-3-years
+- name: Exo Connect Software Renewal
+  type: subscription
+  price: 500.0
+  url: https://store.exo.inc/products/exo-connect-software-renewal
+- name: Exo Works Essential +
+  type: subscription
+  price: 100.0
+  url: https://store.exo.inc/products/exo-works-essential-software-for-learners
+- name: Exo Works Essential - 1 Year (Included)
+  type: subscription
+  price: 100.0
+  url: https://store.exo.inc/products/exo-works-learner
+- name: Exo Iris
+  type: hardware
+  price: 5499.0
+  url: https://store.exo.inc/products/buy-exo-iris
+- name: Iris Learner
+  type: hardware
+  price: 2000.0
+  url: https://store.exo.inc/products/iris-learners
+- name: Device Protection
+  type: add-on
+  price: 150.0
+  url: https://store.exo.inc/products/extended-warranty
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://store.exo.inc/products.json
+  http_status: 200

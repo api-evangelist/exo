@@ -1,0 +1,60 @@
+generated: '2026-08-04'
+method: searched
+source: https://www.exo.inc/exo-works/specs
+docs:
+- https://www.exo.inc/exo-works/specs
+- https://support.exo.inc/hc/en-us/sections/22799151240603-Sign-In
+- https://www.exo.inc/iris/integrations
+scope: platform
+scope_note: 'This is the authentication model Exo documents for its Exo Works platform
+  and Exo Iris mobile application. Exo publishes no public developer API and therefore
+  no API authentication scheme, no API keys, no OAuth surface and no securitySchemes
+  to derive from. Nothing here was derived from a specification.'
+summary:
+  types:
+  - saml
+  - ldap
+  - password
+  - mfa
+  - biometric
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+- name: SAML single sign-on
+  type: saml2
+  tier: Exo Works Connect and Enterprise
+  evidence: '"Single Sign On (SSO) with SAML"'
+  source: https://www.exo.inc/exo-works/specs
+- name: Active Directory (LDAP)
+  type: ldap
+  tier: Exo Works Enterprise
+  evidence: '"Active Directory (LDAP)*" (* requires Exo Works Enterprise)'
+  source: https://www.exo.inc/exo-works/specs
+- name: Username and password
+  type: password
+  evidence: registration and first-time sign-in flow documented in the support portal
+  source: https://support.exo.inc/hc/en-us/sections/22799151240603-Sign-In
+- name: Multi-factor authentication
+  type: mfa
+  evidence: multi-factor authentication listed among Exo Iris device access controls
+  source: https://www.exo.inc/iris/integrations
+- name: Device biometrics / PIN
+  type: biometric
+  evidence: Face ID, Touch ID and PIN code listed as Exo Iris access controls
+  source: https://www.exo.inc/iris/integrations
+session:
+  web_idle_timeout_minutes: 15
+  auto_log_off: true
+  single_device: 'mobile sessions terminate when the same user signs in on another
+    device (USER_SESSION_TIMEOUT event)'
+  source: https://support.exo.inc/hc/en-us/articles/50040102231707-Iris-Activity-Events-Export-Available-Fields
+authorization:
+  model: role-based access control (RBAC)
+  evidence: '"Role-based access control (RBAC)" under Access'
+  source: https://www.exo.inc/exo-works/specs
+gaps:
+- No public API authentication documentation - Exo publishes no developer API.
+- api.prod.exoworks.inc (AWS API Gateway) rejects anonymous requests with HTTP 403
+  and publishes no authentication guidance.
+- No /.well-known/openid-configuration or /.well-known/oauth-authorization-server on
+  any Exo host.

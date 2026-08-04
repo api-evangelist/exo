@@ -1,0 +1,34 @@
+generated: '2026-08-04'
+method: searched
+source: https://support.exo.inc/hc/en-us/categories/47601779738523-Release-Notes
+scope: 'Product lifecycle for the Exo Works platform. Exo publishes no public API,
+  so there is no API versioning policy, no deprecation policy and no versioned API
+  surface to record.'
+versioning:
+  scheme: semver
+  current: 3.0.2
+  applies_to: Exo Works application releases
+  docs: https://support.exo.inc/hc/en-us/sections/47602019816987-Exo-Works-Release-Notes
+  api_versioning: null
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: no published deprecation or sunset policy found on any Exo host
+sla:
+  url: null
+  uptime_target: null
+  note: no public SLA or uptime commitment published; support tiers are quoted per
+    agreement
+status_page: null
+status_page_note: 'status.exo.inc does not resolve; no status page is linked from www.exo.inc,
+  support.exo.inc or cloud.exoworks.inc'
+support:
+  channel: https://support.exo.inc/hc/en-us
+  contact: https://www.exo.inc/contact
+  install_options: Self-installed or White glove (one-time fee)
+platform_support:
+  mobile: iOS 17, 18
+  web: all major web browsers; no client application required
+  desktop: Windows/PC, Mac
+  source: https://www.exo.inc/exo-works/specs
+deprecated_operations: []

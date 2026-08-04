@@ -42,5 +42,24 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Exo is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/exo_stock/
+Exo (Exo Imaging, Inc.) is a Santa Clara, California medical imaging company building a handheld
+ultrasound ecosystem for point-of-care ultrasound (POCUS). Its silicon-based Exo Iris handheld probe
+pairs an FDA-cleared, on-device AI suite with Exo Works, an AWS-hosted POCUS workflow, documentation,
+billing, QA and credentialing platform.
+
+**Exo publishes no public developer API.** Contract discovery probed `/openapi.json`, `/openapi.yaml`,
+`/swagger.json`, `/v1/openapi.json`, `/api-docs`, `/docs`, `/redoc`, `/graphql`, and the full
+`/.well-known/` discovery surface across `www.exo.inc`, `support.exo.inc`, `cloud.exoworks.inc`,
+`exoworks.inc` and `api.exoworks.inc` — every probe returned 404, 403, or a single-page-app HTML shell.
+There is no OpenAPI, no GraphQL, no MCP server, no A2A agent card, no `llms.txt`, no published SDK, and
+no developer portal. The production API host `api.prod.exoworks.inc` (AWS API Gateway) rejects anonymous
+requests with HTTP 403 and is undocumented.
+
+What Exo does publish is an **integration surface for hospital IT**: DICOM (any DICOM-enabled
+ultrasound, modality worklist, PACS/VNA), HL7 v2 (ADT, ultrasound orders, exam results) on the Exo Works
+Enterprise tier, SAML single sign-on and Active Directory, plus Epic App Orchard certification and
+Oracle Cerner CODE program approval — captured in `conformance/` and `authentication/`.
+
+- https://www.exo.inc/
+- https://support.exo.inc/hc/en-us
+- https://forgeglobal.com/exo_stock/ (secondary-market listing that surfaced this company)

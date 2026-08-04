@@ -1,0 +1,166 @@
+generated: '2026-08-04'
+method: searched
+source: https://support.exo.inc/hc/en-us/articles/50040102231707-Iris-Activity-Events-Export-Available-Fields
+title: Iris Activity Events Export Available Fields
+surface: activity-log-export
+transport: CSV / dashboard export from Exo Works; not a webhook, stream, or subscribable event API
+note: 'Exo publishes the full field reference for the Exo Iris activity-event export as a help-center
+  article. This is a real, documented event vocabulary produced by the Iris mobile application and exported
+  by Exo Works administrators. It is NOT a webhook catalog and NOT an AsyncAPI surface: there is no subscription
+  endpoint, no delivery contract, and no schema document. Captured here verbatim so the event names survive;
+  deliberately NOT wired as type Webhooks or type AsyncAPI, because Exo advertises neither.'
+event_count: 35
+groups:
+- name: USER
+  count: 4
+  events:
+  - name: USER_LOGIN_SUCCESSFUL
+    description: User login successful
+    trigger: When User Login is Successful
+  - name: USER_LOGOUT_SUCCESSFUL
+    description: User logout successful
+    trigger: When User Logout is Successful
+  - name: USER_SESSION_TIMEOUT
+    description: User session timeout
+    trigger: 'When User Session is timeout For web: if user is idle for more than 15 mins, they will get
+      logged out automatically For mobile: only happens when a user is logged out, due to the same user
+      is logged in on another device. This activity would eventually be sent to OpenSearch and Pulse after
+      the user from the device that got kicked out logs back in to the app.'
+  - name: USER_SESSION_EXPIRED
+    description: User session expired
+    trigger: When User Session is Expired
+- name: AI
+  count: 12
+  events:
+  - name: AI_SELECT_MODE
+    description: User changes AI Assist view in current procedure
+    trigger: This event captures the user's navigation across various views within our AI solution for
+      each preset. It provides insights into user preferences and engagement with different views.
+  - name: AI_BEGIN_RETROSPECTIVE
+    description: AI Assist transitions to retrospective workflow
+    trigger: Upon activation, the AI initiates either a manual capture or ScanAssist auto-capture. Following
+      video capture, the system transitions to Retrospective view, displaying the results. This event
+      monitors user entry into Retrospective view, providing insights into whether they successfully accessed
+      the results and the time taken to reach this stage.
+  - name: AI_CANCEL_RETROSPECTIVE
+    description: User cancels retrospective workflow
+    trigger: The Retrospective view UI allows users to save their results or cancel the Retrospective
+      View and retake the image. This event captures instances where users choose to cancel the Retrospective
+      view and retake the image, providing insights into the frequency of this occurrence and aiding in
+      understanding user behaviour patterns.
+  - name: AI_COMPLETE_RETROSPECTIVE
+    description: User completes retrospective workflow
+    trigger: The Retrospective view UI allows users to save their results or cancel the Retrospective
+      View and retake the image. This event captures instances where users choose to complete the retrospective
+      you and save the results, providing insights into the frequency of this occurrence and aiding in
+      understanding user behaviour patterns.
+  - name: AI_LENIENCY_CHANGE
+    description: User changes AI Assist leniency
+    trigger: We offer various levels of sensitivity for the scan assist auto capture feature, catering
+      to users with varying degrees of ultrasound imaging expertise. This event allows us to monitor instances
+      where users adjust the sensitivity level of auto capture, ranging from 1 to 4. For instance, the
+      display on Pulse reflects changes in AI Assist sensitivity to level 3.
+  - name: AI_SCRUB_RETROSPECTIVE
+    description: User scrubs in retrospective workflow
+    trigger: In the retrospective view, we provide users with a scrubber tool that allows them to navigate
+      through the captured frames and assess the accuracy of the results. This event enables us to monitor
+      user interactions with the scrubber and gain insights into their reliance on visual information
+      when evaluating the accuracy of the outcomes.
+  - name: AI_SCRUB_KEY_FRAME_LEFT
+    description: User scrubs to previous key frame in retrospective workflow
+    trigger: In addition to the scrubber tool, we have also incorporated right and left arrow keys on
+      the sides of the scrubber tool. These arrow keys serve the purpose of enhancing user experience
+      when navigating through frames and evaluating result accuracy. The software automatically flags
+      keyframes for diagnosis, and the arrow keys allow users to navigate between these keyframes, skipping
+      the intermediate frames. This event enables us to monitor the frequency of arrow key usage compared
+      to the scrubber tool.
+  - name: AI_SCRUB_KEY_FRAME_RIGHT
+    description: User scrubs to next key frame in retrospective workflow
+    trigger: In addition to the scrubber tool, we have also incorporated right and left arrow keys on
+      the sides of the scrubber tool. These arrow keys serve the purpose of enhancing user experience
+      when navigating through frames and evaluating result accuracy. The software automatically flags
+      keyframes for diagnosis, and the arrow keys allow users to navigate between these keyframes, skipping
+      the intermediate frames. This event enables us to monitor the frequency of arrow key usage compared
+      to the scrubber tool.
+  - name: AI_UPDATE_ANNOTATION
+    description: User adjusts annotation added by AI Assist
+    trigger: In the retrospective view, we incorporate modifiable measurements and contours onto the frames
+      to enhance user comprehension of the AI algorithms' calculations. This event enables us to monitor
+      instances where users alter these AI-generated annotations.
+  - name: AI_SAVE_RETROSPECTIVE_RESULTS
+    description: User saves retrospective results
+    trigger: The Retrospective view UI allows users to save their results or cancel the Retrospective
+      View and retake the image. This event captures instances where users choose to save the results,
+      providing insights into the frequency of this occurrence and aiding in understanding user behaviour
+      patterns.
+  - name: AI_MANUAL_RECORD_WITH_VOLUME_BUTTON
+    description: User begins recording with volume button
+    trigger: ''
+  - name: AI_MANUAL_RECORD_WITH_SHUTTER_BUTTON
+    description: User begins recording with shutter button
+    trigger: ''
+- name: DEVICE
+  count: 19
+  events:
+  - name: DEVICE_CONNECTED
+    description: Device connected
+    trigger: When Iris is Connected
+  - name: DEVICE_DISCONNECTED
+    description: Device disconnected
+    trigger: When Iris is Disconnected
+  - name: DEVICE_SCAN_STARTED
+    description: Device scan started
+    trigger: When imaging starts
+  - name: DEVICE_SCAN_FINISHED
+    description: Device scan finished
+    trigger: When imaging ends
+  - name: DEVICE_PRESET_SELECTED
+    description: Device preset selected
+    trigger: Preset selected
+  - name: DEVICE_FW_UPGRADE_STARTED
+    description: Device firmware upgrade started
+    trigger: Starting FW upgrade
+  - name: DEVICE_FW_UPGRADE_FINISHED
+    description: Device firmware upgrade finished
+    trigger: FW upgrade completed
+  - name: DEVICE_FW_UPGRADE_FAILED
+    description: Device firmware upgrade failed
+    trigger: FW upgrade failed
+  - name: DEVICE_TEMPERATURE_REACHED
+    description: Device temperature reached
+    trigger: Max temp reached
+  - name: DEVICE_BATTERY_LOW
+    description: Device battery low
+    trigger: Iris low battery
+  - name: DEVICE_SELFTEST_STARTED
+    description: Device self-test started
+    trigger: Iris self-test started
+  - name: DEVICE_SELFTEST_FINISHED
+    description: Device self-test finished
+    trigger: Iris self-test finished
+  - name: DEVICE_SELFTEST_FAILED
+    description: Device self-test failed
+    trigger: Iris self-test failed
+  - name: DEVICE_ENTERING_MODE
+    description: Device entering mode
+    trigger: new mode selected
+  - name: DEVICE_EXITING_MODE
+    description: Device exiting mode
+    trigger: Mode exited
+  - name: DEVICE_THERMAL_WARNING
+    description: Warning when the device is approaching the maximum thermal limit
+    trigger: When the Thermal Warning is displayed because the device is approaching the maximum thermal
+      limit
+  - name: DEVICE_LARGER_TEXT_WARNING
+    description: Warning when the setting “Larger Text” is detected
+    trigger: Warning when the setting “Larger Text” is detected
+  - name: DEVICE_COMPT_WARNING
+    description: Warning when an unsupported device is detected
+    trigger: Warning when an unsupported device is detected after the user enters the PIN code
+  - name: DEVICE_POWER_SAVING_MODE
+    description: The power saving screen displayed after ~15 second of no skin contact
+    trigger: after ~15 second of no skin contact detected, the power saving screen displayed
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://support.exo.inc/api/v2/help_center/en-us/articles/50040102231707.json
+  http_status: 200

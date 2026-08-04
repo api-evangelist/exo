@@ -1,0 +1,62 @@
+generated: '2026-08-04'
+method: probed
+source: live probes of every Exo host
+summary: 'No /.well-known/ discovery documents are published on any Exo host. The
+  marketing site and the Zendesk help center return HTML 404 pages; the Exo Works web
+  app and tenant hosts are single-page-app catch-alls that answer HTTP 200 with the
+  SPA shell for every path (rejected as false positives, not real documents).'
+hosts:
+- host: https://www.exo.inc
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://support.exo.inc
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://cloud.exoworks.inc
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    rejected: spa-catch-all
+    note: returns the 1572-byte Angular SPA shell (text/html) for every path
+  - path: /.well-known/agent-card.json
+    status: 200
+    rejected: spa-catch-all
+  - path: /.well-known/agent.json
+    status: 200
+    rejected: spa-catch-all
+- host: https://api.exoworks.inc
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 403
+  note: 'AWS API Gateway; every anonymous path returns {"message":"Forbidden"}'
+documents: []

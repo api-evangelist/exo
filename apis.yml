@@ -1,17 +1,36 @@
 aid: exo
 name: Exo
-description: 'Exo is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Exo (Exo Imaging, Inc.) is a Santa Clara, California medical imaging
+  company building a handheld ultrasound ecosystem for point-of-care ultrasound (POCUS).
+  Its silicon-based Exo Iris handheld probe pairs an FDA-cleared, on-device AI suite
+  (SweepAI, cardiac and lung assessment, hemodynamics indicators) with Exo Works, an
+  AWS-hosted POCUS workflow, documentation, billing, QA and credentialing platform.
+  Exo Works is device-agnostic and connects to hospital systems over DICOM (modality
+  worklist, PACS/VNA) and HL7 (ADT, ultrasound orders, exam results), with SAML single
+  sign-on and Active Directory. Exo publishes no public developer API, OpenAPI, SDK
+  or developer portal; its integration surface is the DICOM/HL7 interface engine
+  documented for hospital IT, and its production API host (api.prod.exoworks.inc) is
+  private to the Exo Works clients.'
+image: https://images.ctfassets.net/f1onadsih6xk/2h0Ji7EHg7lS6RQLWyECpx/ddb89eb356079629033488b6424535ed/home-resized.png
 url: https://raw.githubusercontent.com/api-evangelist/exo/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
 specificationVersion: '0.20'
 created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
+- Health
+- Healthcare
+- Medical Imaging
+- Ultrasound
+- Point of Care
+- Artificial Intelligence
+- Medical Devices
+- DICOM
+- HL7
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +38,54 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/exo-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/exo_stock/
+  url: https://www.exo.inc/
+- type: Documentation
+  url: https://support.exo.inc/hc/en-us
+- type: GettingStarted
+  url: https://support.exo.inc/hc/en-us/sections/22799151240603-Sign-In
+- type: Support
+  url: https://www.exo.inc/contact
+- type: Blog
+  url: https://www.exo.inc/newsroom
+- type: GitHubOrganization
+  url: https://github.com/exo-imaging
+- type: Pricing
+  url: https://store.exo.inc/
+- type: Login
+  url: https://cloud.exoworks.inc/
+- type: TermsOfService
+  url: https://store.exo.inc/policies/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.exo.inc/privacy-policy
+- type: TrustCenter
+  url: https://www.exo.inc/security-trust-center
+- type: Compliance
+  url: https://www.exo.inc/security-trust-center/security
+- type: Investments
+  url: https://www.exo.inc/investors
+- type: Careers
+  url: https://www.exo.inc/careers
+- type: Authentication
+  url: authentication/exo-authentication.yml
+- type: Conformance
+  url: conformance/exo-conformance.yml
+- type: Lifecycle
+  url: lifecycle/exo-lifecycle.yml
+- type: ChangeLog
+  url: changelog/exo-changelog.yml
+- type: Plans
+  url: plans/exo-plans.yml
+- type: LLMsTxt
+  url: llms/exo-llms.txt
+- type: EventCatalog
+  url: events/exo-iris-activity-events.yml
+- type: TrustCenter
+  url: security/exo-trust-center.yml
+x-enrichment:
+  date: '2026-08-04'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v1

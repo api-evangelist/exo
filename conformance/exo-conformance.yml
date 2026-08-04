@@ -1,0 +1,114 @@
+generated: '2026-08-04'
+method: searched
+source: https://www.exo.inc/exo-works/specs
+docs:
+- https://www.exo.inc/exo-works/specs
+- https://www.exo.inc/exo-works
+- https://www.exo.inc/security-trust-center/security
+- https://www.exo.inc/iris/integrations
+scope: 'Exo publishes no OpenAPI, AsyncAPI, GraphQL, or other machine-readable API
+  contract, so nothing here is derived from a specification. Every entry below is a
+  claim Exo makes in its own published product specifications, captured verbatim.'
+standards:
+- id: dicom
+  name: DICOM
+  conforms: true
+  evidence: '"Any DICOM-enabled POCUS", "DICOM modality worklist", "PACS or VNA" (Exo
+    Works tech specs); "securely connect via TLS DICOM using the best practices for
+    encryption" (support portal)'
+  source: https://www.exo.inc/exo-works/specs
+- id: dicom-modality-worklist
+  name: DICOM Modality Worklist (MWL)
+  conforms: true
+  evidence: '"DICOM modality worklist" listed under DICOM Interfaces'
+  source: https://www.exo.inc/exo-works/specs
+- id: hl7-v2
+  name: HL7 v2 messaging
+  conforms: true
+  evidence: '"HL7 protocol", "Admit/Discharge/Transfer (ADT)", "Ultrasound orders",
+    "Exam results/report" under EHR Interface (Exo Works Enterprise only)'
+  source: https://www.exo.inc/exo-works/specs
+- id: hl7-fhir
+  name: HL7 FHIR
+  conforms: true
+  evidence: '"EHR integration (HL7/ADT/FHIR)" listed as an Exo Works Enterprise tier
+    feature in the published package comparison. No FHIR resource list, capability
+    statement, or endpoint is published.'
+  source: https://www.exo.inc/exo-works
+  confidence: low
+- id: saml2
+  name: SAML 2.0 single sign-on
+  conforms: true
+  evidence: '"Single Sign On (SSO) with SAML" under Authentication'
+  source: https://www.exo.inc/exo-works/specs
+- id: ldap
+  name: LDAP / Active Directory
+  conforms: true
+  evidence: '"Active Directory (LDAP)*" (* requires Exo Works Enterprise)'
+  source: https://www.exo.inc/exo-works/specs
+- id: epic-app-orchard
+  name: Epic App Orchard (now Epic Toolbox/Showroom)
+  conforms: true
+  evidence: '"Epic App Orchard Certified"'
+  source: https://www.exo.inc/exo-works
+- id: cerner-code
+  name: Oracle Cerner CODE program
+  conforms: true
+  evidence: '"Cerner Code Program Approved"'
+  source: https://www.exo.inc/exo-works
+- id: hitrust
+  name: HITRUST
+  conforms: true
+  evidence: '"HITRUST certified"'
+  source: https://www.exo.inc/security-trust-center/security
+- id: soc2-type2
+  name: SOC 2 Type II
+  conforms: true
+  evidence: '"SOC 2 TYPE II" / "SOC 2 Type II Audited"'
+  source: https://www.exo.inc/security-trust-center/security
+- id: iso-27001
+  name: ISO/IEC 27001
+  conforms: true
+  evidence: '"ISO 27001"; "a complete set of information security policies based on
+    international standards ISO/IEC 27001"'
+  source: https://www.exo.inc/security-trust-center/security
+- id: iso-27701
+  name: ISO/IEC 27701
+  conforms: true
+  evidence: '"ISO 27701"'
+  source: https://www.exo.inc/exo-works/specs
+- id: hipaa
+  name: HIPAA
+  conforms: true
+  evidence: '"HIPAA-compliant"'
+  source: https://www.exo.inc/exo-works/specs
+- id: gdpr
+  name: GDPR
+  conforms: true
+  evidence: '"GDPR"; data privacy request form at /privacy-policy/request'
+  source: https://www.exo.inc/exo-works/specs
+- id: fda-510k
+  name: FDA 510(k) clearance
+  conforms: true
+  evidence: FDA-cleared AI applications on Exo Iris announced in Exo press releases
+    (pleural effusion detection, LVEF estimation, heart failure indicators)
+  source: https://www.exo.inc/newsroom
+- id: oauth2
+  conforms: false
+  evidence: no public OAuth surface; no /.well-known/oauth-authorization-server on
+    any Exo host (all 404)
+- id: oidc
+  conforms: false
+  evidence: no /.well-known/openid-configuration on any Exo host (all 404)
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no public API specification to evaluate
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on www.exo.inc and support.exo.inc
+- id: openapi
+  conforms: false
+  evidence: 'contract discovery probed /openapi.json, /openapi.yaml, /swagger.json,
+    /v1/openapi.json, /api-docs, /docs, /redoc and /graphql across www.exo.inc, support.exo.inc,
+    cloud.exoworks.inc, exoworks.inc and api.exoworks.inc - all 404, 403, or SPA HTML
+    shells'
