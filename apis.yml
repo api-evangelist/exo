@@ -11,6 +11,17 @@ description: 'Exo (Exo Imaging, Inc.) is a Santa Clara, California medical imagi
   or developer portal; its integration surface is the DICOM/HL7 interface engine
   documented for hospital IT, and its production API host (api.prod.exoworks.inc) is
   private to the Exo Works clients.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://images.ctfassets.net/f1onadsih6xk/2h0Ji7EHg7lS6RQLWyECpx/ddb89eb356079629033488b6424535ed/home-resized.png
 url: https://raw.githubusercontent.com/api-evangelist/exo/refs/heads/main/apis.yml
 x-type: company
