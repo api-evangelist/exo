@@ -84,3 +84,80 @@ x-evidence:
   fetched: '2026-08-04'
   url: https://store.exo.inc/products.json
   http_status: 200
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - one-time
+  - subscription
+  units: []
+  plans:
+  - name: Exo Works Connect
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Exo Works Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Connect 1 Year
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods:
+    - year
+  - name: Connect 2 Years
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods:
+    - other
+  - name: Connect 3 Years
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods:
+    - other
+  - name: Exo Connect Software Renewal
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods: []
+  - name: Exo Works Essential +
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods: []
+  - name: Exo Works Essential - 1 Year (Included)
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods: []
+  - name: Exo Iris
+    access: other
+    model: one-time
+    model_how: stated
+    units: []
+    periods: []
+  - name: Iris Learner
+    access: other
+    model: one-time
+    model_how: stated
+    units: []
+    periods: []
+  - name: Device Protection
+    access: addon
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
