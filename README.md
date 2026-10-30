@@ -64,24 +64,97 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Exo (Exo Imaging, Inc.) is a Santa Clara, California medical imaging company building a handheld
-ultrasound ecosystem for point-of-care ultrasound (POCUS). Its silicon-based Exo Iris handheld probe
-pairs an FDA-cleared, on-device AI suite with Exo Works, an AWS-hosted POCUS workflow, documentation,
-billing, QA and credentialing platform.
+Exo (Exo Imaging, Inc.) is a Santa Clara, California medical imaging company building a handheld ultrasound ecosystem for point-of-care ultrasound (POCUS). Its silicon-based Exo Iris handheld probe pairs an FDA-cleared, on-device AI suite (SweepAI, cardiac and lung assessment, hemodynamics indicators) with Exo Works, an AWS-hosted POCUS workflow, documentation, billing, QA and credentialing platform. Exo Works is device-agnostic and connects to hospital systems over DICOM (modality worklist, PACS/VNA) and HL7 (ADT, ultrasound orders, exam results), with SAML single sign-on and Active Directory. Exo publishes no public developer API, OpenAPI, SDK or developer portal; its integration surface is the DICOM/HL7 interface engine documented for hospital IT, and its production API host (api.prod.exoworks.inc) is private to the Exo Works clients.
 
-**Exo publishes no public developer API.** Contract discovery probed `/openapi.json`, `/openapi.yaml`,
-`/swagger.json`, `/v1/openapi.json`, `/api-docs`, `/docs`, `/redoc`, `/graphql`, and the full
-`/.well-known/` discovery surface across `www.exo.inc`, `support.exo.inc`, `cloud.exoworks.inc`,
-`exoworks.inc` and `api.exoworks.inc` — every probe returned 404, 403, or a single-page-app HTML shell.
-There is no OpenAPI, no GraphQL, no MCP server, no A2A agent card, no `llms.txt`, no published SDK, and
-no developer portal. The production API host `api.prod.exoworks.inc` (AWS API Gateway) rejects anonymous
-requests with HTTP 403 and is undocumented.
+**Areas:** Company · Health · Healthcare · Medical Imaging · Ultrasound · Point of Care · Artificial Intelligence · Medical Devices · DICOM · HL7
 
-What Exo does publish is an **integration surface for hospital IT**: DICOM (any DICOM-enabled
-ultrasound, modality worklist, PACS/VNA), HL7 v2 (ADT, ultrasound orders, exam results) on the Exo Works
-Enterprise tier, SAML single sign-on and Active Directory, plus Epic App Orchard certification and
-Oracle Cerner CODE program approval — captured in `conformance/` and `authentication/`.
+## Exo on APIs.io
 
-- https://www.exo.inc/
-- https://support.exo.inc/hc/en-us
-- https://forgeglobal.com/exo_stock/ (secondary-market listing that surfaced this company)
+Everything profiled for Exo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/exo/](https://apis.io/providers/exo/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Exo Authentication](https://apis.io/security/exo/exo-authentication/)
+- [Exo Domain Security](https://apis.io/security/exo/exo-domain-security/)
+- [Exo Trust Center](https://apis.io/security/exo/exo-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Exo Plans](https://apis.io/plans/exo/exo-plans/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.exo.inc/)
+- [Documentation](https://support.exo.inc/hc/en-us)
+- [Getting started](https://support.exo.inc/hc/en-us/sections/22799151240603-Sign-In)
+- [Pricing](https://store.exo.inc/)
+- [Support](https://www.exo.inc/contact)
+- [Blog](https://www.exo.inc/newsroom)
+- [Compliance](https://www.exo.inc/security-trust-center/security)
+- [Trust centre](https://www.exo.inc/security-trust-center)
+- [Terms of service](https://store.exo.inc/policies/terms-of-service)
+- [Privacy policy](https://www.exo.inc/privacy-policy)
+- [GitHub](https://github.com/exo-imaging)
+
+## API Evangelist rating
+
+**Kin Score 36.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 40.5 |
+| Access clarity | 85.5 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.1** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/exo/](https://apis.io/providers/exo/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Exo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/exo/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
